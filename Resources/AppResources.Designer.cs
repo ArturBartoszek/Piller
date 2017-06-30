@@ -62,6 +62,15 @@ namespace Piller.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Informacje.
+        /// </summary>
+        public static string About_Title {
+            get {
+                return ResourceManager.GetString("About_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to wieczorem.
         /// </summary>
         public static string EveningLabel {

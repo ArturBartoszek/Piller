@@ -4879,6 +4879,9 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f0800b9
 			public const int action0 = 2131230905;
 			
+			// aapt resource value: 0x7f0800e4
+			public const int action_About = 2131230948;
+			
 			// aapt resource value: 0x7f080066
 			public const int action_bar = 2131230822;
 			
@@ -4927,14 +4930,14 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080045
 			public const int action_mode_close_button = 2131230789;
 			
-			// aapt resource value: 0x7f0800dd
-			public const int action_save = 2131230941;
+			// aapt resource value: 0x7f0800e2
+			public const int action_save = 2131230946;
 			
-			// aapt resource value: 0x7f0800df
-			public const int action_search = 2131230943;
+			// aapt resource value: 0x7f0800e5
+			public const int action_search = 2131230949;
 			
-			// aapt resource value: 0x7f0800de
-			public const int action_settings = 2131230942;
+			// aapt resource value: 0x7f0800e3
+			public const int action_settings = 2131230947;
 			
 			// aapt resource value: 0x7f0800b8
 			public const int action_text = 2131230904;
@@ -4963,8 +4966,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080025
 			public const int always = 2131230757;
 			
-			// aapt resource value: 0x7f0800d5
-			public const int appbar = 2131230933;
+			// aapt resource value: 0x7f0800da
+			public const int appbar = 2131230938;
 			
 			// aapt resource value: 0x7f080031
 			public const int auto = 2131230769;
@@ -4987,8 +4990,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f08004d
 			public const int buttonPanel = 2131230797;
 			
-			// aapt resource value: 0x7f0800d4
-			public const int button_delete_dosage_hour = 2131230932;
+			// aapt resource value: 0x7f0800d9
+			public const int button_delete_dosage_hour = 2131230937;
 			
 			// aapt resource value: 0x7f080085
 			public const int cancelButton = 2131230853;
@@ -5026,8 +5029,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080026
 			public const int collapseActionView = 2131230758;
 			
-			// aapt resource value: 0x7f0800d7
-			public const int contentFrame = 2131230935;
+			// aapt resource value: 0x7f0800dc
+			public const int contentFrame = 2131230940;
 			
 			// aapt resource value: 0x7f080050
 			public const int contentPanel = 2131230800;
@@ -5131,8 +5134,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080082
 			public const int fridayCheckBox = 2131230850;
 			
-			// aapt resource value: 0x7f0800dc
-			public const int holidays = 2131230940;
+			// aapt resource value: 0x7f0800e1
+			public const int holidays = 2131230945;
 			
 			// aapt resource value: 0x7f080005
 			public const int home = 2131230725;
@@ -5158,8 +5161,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080076
 			public const int imageView1 = 2131230838;
 			
-			// aapt resource value: 0x7f0800d1
-			public const int imageView2 = 2131230929;
+			// aapt resource value: 0x7f0800d6
+			public const int imageView2 = 2131230934;
 			
 			// aapt resource value: 0x7f0800c3
 			public const int info = 2131230915;
@@ -5176,8 +5179,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f0800a4
 			public const int label_medication_days_of_week = 2131230884;
 			
-			// aapt resource value: 0x7f0800d3
-			public const int label_medication_hour = 2131230931;
+			// aapt resource value: 0x7f0800d8
+			public const int label_medication_hour = 2131230936;
 			
 			// aapt resource value: 0x7f08009f
 			public const int label_medication_name = 2131230879;
@@ -5221,14 +5224,14 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f0800b2
 			public const int main_content = 2131230898;
 			
-			// aapt resource value: 0x7f0800d9
-			public const int masked = 2131230937;
+			// aapt resource value: 0x7f0800de
+			public const int masked = 2131230942;
 			
 			// aapt resource value: 0x7f0800bc
 			public const int media_actions = 2131230908;
 			
-			// aapt resource value: 0x7f0800db
-			public const int medical_card = 2131230939;
+			// aapt resource value: 0x7f0800e0
+			public const int medical_card = 2131230944;
 			
 			// aapt resource value: 0x7f0800b4
 			public const int medicationList = 2131230900;
@@ -5250,6 +5253,12 @@ namespace Piller.Droid
 			
 			// aapt resource value: 0x7f08001c
 			public const int multiply = 2131230748;
+			
+			// aapt resource value: 0x7f0800d2
+			public const int nap = 2131230930;
+			
+			// aapt resource value: 0x7f0800d3
+			public const int napNumber = 2131230931;
 			
 			// aapt resource value: 0x7f080092
 			public const int navigation_header_container = 2131230866;
@@ -5293,8 +5302,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f0800a8
 			public const int photo = 2131230888;
 			
-			// aapt resource value: 0x7f0800d2
-			public const int pillertext = 2131230930;
+			// aapt resource value: 0x7f0800d7
+			public const int pillertext = 2131230935;
 			
 			// aapt resource value: 0x7f08003a
 			public const int pin = 2131230778;
@@ -5316,6 +5325,9 @@ namespace Piller.Droid
 			
 			// aapt resource value: 0x7f0800c0
 			public const int right_side = 2131230912;
+			
+			// aapt resource value: 0x7f0800d1
+			public const int ring = 2131230929;
 			
 			// aapt resource value: 0x7f080083
 			public const int saturdayCheckBox = 2131230851;
@@ -5488,8 +5500,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080059
 			public const int title_template = 2131230809;
 			
-			// aapt resource value: 0x7f0800d6
-			public const int toolbar = 2131230934;
+			// aapt resource value: 0x7f0800db
+			public const int toolbar = 2131230939;
 			
 			// aapt resource value: 0x7f080075
 			public const int toolbars = 2131230837;
@@ -5515,8 +5527,8 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f080009
 			public const int up = 2131230729;
 			
-			// aapt resource value: 0x7f0800da
-			public const int upcoming = 2131230938;
+			// aapt resource value: 0x7f0800df
+			public const int upcoming = 2131230943;
 			
 			// aapt resource value: 0x7f08001a
 			public const int useLogo = 2131230746;
@@ -5524,11 +5536,17 @@ namespace Piller.Droid
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800d8
-			public const int visible = 2131230936;
+			// aapt resource value: 0x7f0800dd
+			public const int visible = 2131230941;
 			
 			// aapt resource value: 0x7f080080
 			public const int wednesdayCheckBox = 2131230848;
+			
+			// aapt resource value: 0x7f0800d4
+			public const int window = 2131230932;
+			
+			// aapt resource value: 0x7f0800d5
+			public const int windowNumber = 2131230933;
 			
 			// aapt resource value: 0x7f080029
 			public const int withText = 2131230761;
