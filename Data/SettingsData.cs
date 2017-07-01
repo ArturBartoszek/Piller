@@ -12,11 +12,13 @@ namespace Piller.Data
         public TimeSpan Morning { get; set; }
         public TimeSpan Afternoon { get; set; }
         public TimeSpan Evening { get; set; }
+        public string RingUri { get; set; }
         public SettingsData()
         {
             Morning = TimeSpan.Parse("09:00:00");
             Afternoon =TimeSpan.Parse("15:00:00");
             Evening = TimeSpan.Parse("21:00:00");
+            RingUri = "content://settings/system/ringtone";
         }
     }
 }

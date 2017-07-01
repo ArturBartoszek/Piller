@@ -218,6 +218,8 @@ namespace Piller.ViewModels
         private TimeSpan afternoon;
         public TimeSpan EveningHour { get; private set; }
 
+        public string RingUri { get; private set; }
+
         public ReactiveCommand<Unit, bool> Save { get; private set; }
         public ReactiveCommand<MedicationDosage, bool> Delete { get; set; }    
         public ReactiveCommand<Unit, Unit> SelectAllDays { get; set; }
@@ -263,6 +265,7 @@ namespace Piller.ViewModels
 					Dosage = this.MedicationDosage,
                     Morning = this.Morning,
                     Evening = this.Evening,
+                    RingUri = this.RingUri,
 
                     Days =
                         (this.Monday ? DaysOfWeek.Monday : DaysOfWeek.None)
@@ -369,6 +372,9 @@ namespace Piller.ViewModels
                 MorningHour = mesg.Morning;
                 EveningHour = mesg.Evening;
                 setHours();
+
+                RingUri = mesg.RingUri;
+
                 Mvx.Resolve<IMvxMessenger>().Publish(new DataChangedMessage(this));
             });
 
@@ -385,6 +391,8 @@ namespace Piller.ViewModels
             afternoon = data.Afternoon;
             EveningHour = data.Evening;
             setHours();
+
+            RingUri = data.RingUri;
         }
 
         private void setHours()
@@ -418,10 +426,7 @@ namespace Piller.ViewModels
                 Saturday = item.Days.HasFlag(DaysOfWeek.Saturday);
                 Sunday = item.Days.HasFlag(DaysOfWeek.Sunday);
 				DosageHours = new RxUI.ReactiveList<TimeSpan>(item.DosageHours);
-
-
-
-
+                RingUri = item.RingUri;
 
 
                 if (!string.IsNullOrEmpty(item.ImageName))

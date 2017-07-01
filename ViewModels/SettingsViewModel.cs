@@ -34,9 +34,16 @@ namespace Piller.ViewModels
             get { return eveningHour; }
             set { SetProperty(ref eveningHour, value); }
         }
+        private string ringUri;
+        public string RingUri
+        {
+            get { return ringUri; }
+            set { SetProperty(ref ringUri, value); }
+        }
         public ReactiveCommand<TimeSpan, Unit> SetMorning { get; }
         public ReactiveCommand<TimeSpan, Unit> SetAfternoon { get; }
         public ReactiveCommand<TimeSpan, Unit> SetEvening { get; }
+        public ReactiveCommand<String, Unit> SetRingUri { get; }
         public ReactiveCommand<Unit, bool> Save { get; }
         private SettingsData settingsData;
         private ISettings settings = Mvx.Resolve<ISettings>();
@@ -48,12 +55,16 @@ namespace Piller.ViewModels
             MorningHour = settingsData.Morning;
             eveningHour = settingsData.Evening;
 
+            RingUri = settingsData.RingUri;
+
             SetMorning = ReactiveCommand.Create<TimeSpan>(hour => MorningHour = hour);
             SetEvening = ReactiveCommand.Create<TimeSpan>(hour => EveningHour = hour);
 
+            SetRingUri = ReactiveCommand.Create<String>(uri => RingUri = uri);
+
             Save = ReactiveCommand.Create(() =>
             {
-                var data = JsonConvert.SerializeObject(new SettingsData() { Morning = this.MorningHour, Afternoon = this.AfternoonHour, Evening = this.EveningHour });
+                var data = JsonConvert.SerializeObject(new SettingsData() { Morning = this.MorningHour, Afternoon = this.AfternoonHour, Evening = this.EveningHour, RingUri = this.RingUri });
                 settings.AddOrUpdateValue<string>(key, data);
                 return true;
             });
@@ -62,7 +73,7 @@ namespace Piller.ViewModels
                 if (x)
                 {
                     await reloadDataBase();
-                    Mvx.Resolve<IMvxMessenger>().Publish(new SettingsChangeMessage(this,MorningHour,EveningHour));
+                    Mvx.Resolve<IMvxMessenger>().Publish(new SettingsChangeMessage(this,MorningHour,EveningHour, ringUri));
                     Close(this);
                 }
             });
@@ -83,6 +94,7 @@ namespace Piller.ViewModels
                 if (item.Evening)
                     dosageHours.Add(EveningHour);
                 item.DosageHours = dosageHours;
+                item.RingUri = ringUri;
                 await storage.SaveAsync<MedicationDosage>(item);
                 await notifications.ScheduleNotification(item);
             }

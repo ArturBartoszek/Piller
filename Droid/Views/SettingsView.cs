@@ -134,6 +134,8 @@ namespace Piller.Droid.Views
                     ringBtn.Text = "Default";
                 else
                     ringBtn.Text = title;
+
+                this.ViewModel.SetRingUri.Execute(ring.ToString()).Subscribe();
             }
         }
 
