@@ -95,8 +95,7 @@
         android:textColor="@color/md_black_1000"
         android:padding="5dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/textView2" />
+        android:layout_marginTop="10dp" />
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -105,19 +104,17 @@
             android:text="Dźwięk notyfikacji"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView1" />
+            android:layout_height="wrap_content" />
         <RadioButton
-            android:id="@+id/ring"
+            android:id="@+id/ringBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Syrena"
+            android:text="Default"
             android:clickable="true"
             android:background="?attr/selectableItemBackground"
             android:button="@null"
             android:drawableRight="@drawable/radio_selector"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="0.0dp" />
+            android:layout_alignParentRight="true" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
@@ -131,16 +128,13 @@
             android:text="Drzemka"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/nap" />
+            android:layout_height="wrap_content" />
         <EditText
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/napNumber"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="0.0dp"
-            android:layout_marginLeft="0.0dp" />
+            android:id="@+id/napTime"
+            android:layout_alignParentRight="true" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"
@@ -154,16 +148,13 @@
             android:text="Okienko 'najbliższe'"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/window" />
+            android:layout_height="wrap_content" />
         <EditText
             android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/windowNumber"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="0.0dp"
-            android:layout_marginLeft="0.0dp" />
+            android:id="@+id/upcomingTime"
+            android:layout_alignParentRight="true" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"

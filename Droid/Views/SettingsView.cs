@@ -13,6 +13,7 @@ using Piller.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 using MvvmCross.Binding.BindingContext;
+using Android.Media;
 
 namespace Piller.Droid.Views
 {
@@ -25,6 +26,7 @@ namespace Piller.Droid.Views
         TextView morningHour;
         TextView afternoonHour;
         TextView eveningHour;
+        RadioButton ringBtn;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -43,6 +45,8 @@ namespace Piller.Droid.Views
             morningHour = FindViewById<TextView>(Resource.Id.morningHour);
             afternoonHour = FindViewById<TextView>(Resource.Id.afternoonHour);
             eveningHour = FindViewById<TextView>(Resource.Id.eveningHour);
+
+            ringBtn = FindViewById<RadioButton>(Resource.Id.ringBtn);
             SetBinding();
 
             morning.Click += (o, e) =>
@@ -87,6 +91,18 @@ namespace Piller.Droid.Views
                      true);
                 timePicker.Show();
             };
+
+            ringBtn.Click += (o, e) =>
+            {
+                Intent intent = new Intent(RingtoneManager.ActionRingtonePicker);
+                intent.PutExtra(RingtoneManager.ExtraRingtoneTitle, true);
+                intent.PutExtra(RingtoneManager.ExtraRingtoneShowSilent, false);
+                intent.PutExtra(RingtoneManager.ExtraRingtoneShowDefault, true);
+                intent.PutExtra(RingtoneManager.ExtraRingtoneExistingUri, RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
+                StartActivityForResult(Intent.CreateChooser(intent, "Wybierz dzwonek"), 0);
+
+                //Android.Net.Uri ring = (Android.Net.Uri)intent.GetParcelableExtra(RingtoneManager.ExtraRingtonePickedUri);
+            };
         }
 
         private void SetBinding()
@@ -104,6 +120,21 @@ namespace Piller.Droid.Views
                 .WithConversion(new InlineValueConverter<TimeSpan, string>(t => $"{t:hh\\:mm}"));
             bindingSet.Apply();
 
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+            if (resultCode == Result.Ok)
+            {
+                Android.Net.Uri ring = (Android.Net.Uri)data.GetParcelableExtra(RingtoneManager.ExtraRingtonePickedUri);
+                Ringtone ringtone = RingtoneManager.GetRingtone(this, ring);
+                String title = ringtone.GetTitle(this);
+                if (title.Contains("Default ringtone (Flutey Phone)"))
+                    ringBtn.Text = "Default";
+                else
+                    ringBtn.Text = title;
+            }
         }
 
         public override bool OnSupportNavigateUp()
